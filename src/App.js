@@ -1,4 +1,5 @@
 import React from "react";
+import sprites from "./utilities/importSprites";
 
 const App = () => {
   return (
