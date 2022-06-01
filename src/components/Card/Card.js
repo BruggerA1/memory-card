@@ -1,9 +1,10 @@
-import React, { memo } from "react";
+import React from "react";
 import Sprites from '../../objects/Sprites';
 import Memory from "../../objects/Memory";
 
 const Card = ({refreshList, addPointToScore, resetScore}) => {
-	const handleClick = (e) => {		
+	const handleClick = (e) => {
+				
 		Memory.forEach(sprite => {
 			if (e.target.src == sprite) {
 				resetScore();

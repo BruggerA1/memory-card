@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Memory from "../objects/Memory";
 import Score from "../objects/Score";
+import Title from "../components/Title/Title";
 import ScoreBoard from "../components/ScoreBoard/ScoreBoard";
 import GameBoard from "../components/GameBoard/GameBoard";
 import Reset from "../components/Reset/Reset";
@@ -14,21 +15,25 @@ const App = () => {
   return (
     <div className="App">
       <header>
-        <ScoreBoard
+        <Title/>
+      </header>
+      <main>
+      <ScoreBoard
           current={currentScore}
           high={highScore}
         />
-      </header>
-      <main>
         <GameBoard
           setCurrent={setCurrent}
           setHigh={setHigh}
           spriteDb={spriteDB}
           setSpriteDB={setSpriteDB}
         />
-        <Reset/>
       </main>
       <footer>
+        <Reset
+          setCurrent={setCurrent}
+          setHigh={setHigh}
+        />
         <Credits/>
       </footer>
     </div>

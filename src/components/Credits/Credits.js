@@ -2,9 +2,9 @@ import React from "react";
 
 const Credits = () => {
 	return (
-		<div className="">
-			Credits.
-		</div>
+		<span className="Credits">
+			A bru.GG Production
+		</span>
 	);
 };
 

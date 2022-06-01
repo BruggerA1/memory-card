@@ -15,7 +15,10 @@ const Score = (() => {
 	const reset = () => {
 		return current = 0;
 	};
-	return {current, high, addPoint, checkHighScore, reset};
+	const resetHigh = () => {
+		return high = 0;
+	};
+	return {current, high, addPoint, checkHighScore, reset, resetHigh};
 })();
 
 export default Score;

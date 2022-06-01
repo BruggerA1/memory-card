@@ -32,6 +32,7 @@ const GameBoard = ({setCurrent, setHigh, spriteDB, setSpriteDB}) => {
 			/>,
 		];
 	};
+
 	const addPointToScore = () => {
 		setCurrent(Score.addPoint());
 		setHigh(Score.checkHighScore());
