@@ -1,24 +1,49 @@
 import React, { useState } from "react";
+import Score from "../../objects/Score";
 import Card from "../Card/Card";
 
-const GameBoard = () => {
-	const handleList = () => {
-		setCardList(newList)
+const GameBoard = ({setCurrent, setHigh, spriteDB, setSpriteDB}) => {
+	const refreshList = () => {
+		setCards(cardList());
 	};
 
-	const newList = () => {
+	const cardList = () => {
 		return [
-			<Card refreshCardList={handleList}/>, 
-			<Card refreshCardList={handleList}/>, 
-			<Card refreshCardList={handleList}/>, 
+			<Card
+				refreshList={refreshList}
+				addPointToScore={addPointToScore}
+				spriteDB={spriteDB}
+				setSpriteDB={setSpriteDB}
+				resetScore={resetScore}
+			/>,
+			<Card
+				refreshList={refreshList}
+				addPointToScore={addPointToScore}
+				spriteDB={spriteDB}
+				setSpriteDB={setSpriteDB}
+				resetScore={resetScore}
+			/>,
+			<Card
+				refreshList={refreshList}
+				addPointToScore={addPointToScore}
+				spriteDB={spriteDB}
+				setSpriteDB={setSpriteDB}
+				resetScore={resetScore}
+			/>,
 		];
 	};
-
-	const [cardList, setCardList] = useState(newList);
+	const addPointToScore = () => {
+		setCurrent(Score.addPoint());
+		setHigh(Score.checkHighScore());
+	}
+	const resetScore = () => {
+		setCurrent(Score.reset());
+	};
+	const [cards, setCards] = useState(cardList());
 
 	return (
 		<div className="GameBoard">
-			{cardList}
+			{cards}
 		</div>
 	);
 };

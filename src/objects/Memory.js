@@ -1,12 +1,12 @@
 const Memory = (() => {
-	const spriteDB = [];
+	let spriteDB = [];
 
 	const addSprite = (sprite) => {
-		spriteDB.push(sprite);
+		spriteDB.push(sprite)
 	};
 
 	const clear = () => {
-		spriteDB = [];
+		return spriteDB.splice(0, spriteDB.length)
 	};
 
 	return Object.assign(spriteDB, {addSprite, clear})

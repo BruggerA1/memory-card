@@ -1,18 +1,10 @@
-import React, {useState} from "react";
-import Score from "../../objects/Score";
+import React from "react";
 
-const ScoreBoard = () => {
-	const [current, setCurrent] = useState(Score.current);
-	const [high, setHigh] = useState(Score.high);
-	const handleClick = () => {
-		setCurrent(Score.addPoint());
-		setHigh(Score.checkHighScore());
-	};
+const ScoreBoard = ({current, high}) => {
 	return (
 		<div className="ScoreBoard">
-			<div>Current: {current}</div>
+			<div>Current: {current} </div>
 			<div>High: {high}</div>
-			{/* <button onClick={handleClick}>Click</button> */}
 		</div>
 	);
 }
